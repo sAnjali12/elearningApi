@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Basic Python",
+    "discription": "We will learn Basic Python",
+    "id": 1
+  },
+  {
+    "name": "HTML",
+    "discription": "We will learn HTML",
+    "id": 2
+  },
+  {
+    "name":"c++",
+    "discription":"We will learn c++",
+    "id": 3
+  },
+  {
+    "name": "php",
+    "discription": "We will learn Php",
+    "id": 4
+  },
+  {
+    "name": "WebScraping",
+    "discription": "We will learn WebScraping",
+    "id": 5
+  },
+  {
+    "name": "C",
+    "discription": "We will learn C",
+    "id": 6
+  },
+  {
+    "name": "Python Request",
+    "discription": "We will learn Python Request",
+    "id": 7
+  },
+  {
+    "name": "Python Request",
+    "discription": "We will learn Python Request",
+    "id": 8
+  },
+  {
+    "name": "c++",
+    "discription": "We will learn c++",
+    "id": 9
+  },
+  {
+    "name": "DataStrucuter",
+    "discription": "We will learn DataStrucuter",
+    "id": 10
+  }
+]
