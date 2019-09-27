@@ -38,6 +38,9 @@ expresapp.get("/:name",function(req,res){
     }
     res.end(JSON.stringify(course))
 })
+
+
+// for uping data....
 expresapp.put('/putbyid/:id', function (req, res) {
 
     var id = req.params.id;
@@ -51,6 +54,22 @@ expresapp.put('/putbyid/:id', function (req, res) {
     return res.json(data)
 
 })
+// / Delete data name choice data...
+expresapp.delete("/delete/:id",function(req,res){
+    var data  = fs.readFileSync("courses.json");
+    var Data = JSON.parse(data);
+    for (var i = 0;i<Data.length;i++){
+        if(req.params.id==Data[i]["id"]){
+            var a =  delete Data[i]
+            break;
+        }
+
+   
+    }
+    fs.writeFileSync("courses.json", JSON.stringify(Data,null,2))
+    return res.json(Data)
+})
+
 
 const port = 2000
 app.listen(port,()=>
