@@ -1,0 +1,107 @@
+[
+  {
+    "courseId": 1,
+    "name": "if-else",
+    "content": "ksjddjfhkjnv",
+    "hint": "practical on terminal",
+    "id": 1
+  },
+  {
+    "courseId": 1,
+    "name": "Whileloop",
+    "content": "will take variable for incryment",
+    "hint": "practical on terminal",
+    "id": 2
+  },
+  {
+    "courseId": 1,
+    "name": "list",
+    "content": "here we will use square bracket",
+    "hint": "practical on terminal",
+    "id": 3
+  },
+  {
+    "courseId": 1,
+    "name": "function",
+    "content": "here we will use def keyword",
+    "hint": "practical on terminal",
+    "id": 4
+  },
+  {
+    "courseId": 2,
+    "name": "Basic HTML",
+    "content": "here we will use html",
+    "hint": "practical on terminal,using google",
+    "id": 5
+  },
+  {
+    "courseId": 2,
+    "name": " HTML",
+    "content": "here we will learn html",
+    "hint": "practical on terminal,using google",
+    "id": 6
+  },
+  {
+    "courseId": 3,
+    "name": " c++",
+    "content": "here we will learn c++",
+    "hint": "practical on terminal,using google",
+    "id": 7
+  },
+  {
+    "courseId": 4,
+    "name": "php learnig",
+    "content": "here we will learn php",
+    "hint": "practical on terminal,using google",
+    "id": 8
+  },
+  {
+    "courseId": 5,
+    "name": "task1",
+    "content": "here we will learn WebScraping",
+    "hint": "practical on terminal,using google",
+    "id": 9
+  },
+  {
+    "courseId": 5,
+    "name": "task2",
+    "content": "here we will learn WebScraping",
+    "hint": "practical on terminal,using google",
+    "id": 10
+  },
+  {
+    "courseId": 6,
+    "name": "basic c language",
+    "content": "here we will learn basic c",
+    "hint": "practical on terminal,using google",
+    "id": 11
+  },
+  {
+    "courseId": 7,
+    "name": "using json",
+    "content": "here we will learn basic json",
+    "hint": "practical on terminal,using google",
+    "id": 12
+  },
+  {
+    "courseId": 7,
+    "name": "Api calling",
+    "content": "here we will learn how to get data by url",
+    "hint": "practical on terminal,using google",
+    "id": 13
+  },
+  {
+    "courseId": 8,
+    "name": "Basic c++ ",
+    "content": "here we will learn basic c++",
+    "hint": "practical on terminal,using google",
+    "id": 14
+  },
+  {
+    "courseId": 9,
+    "name": "DataStrucuter",
+    "content": "here we will learn basic DataStrucuter",
+    "hint": "practical on terminal,using google",
+    "id": 15
+  }
+]

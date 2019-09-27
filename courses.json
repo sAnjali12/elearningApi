@@ -10,8 +10,8 @@
     "id": 2
   },
   {
-    "name":"c++",
-    "discription":"We will learn c++",
+    "name": "c++",
+    "discription": "We will learn c++",
     "id": 3
   },
   {
@@ -35,18 +35,13 @@
     "id": 7
   },
   {
-    "name": "Python Request",
-    "discription": "We will learn Python Request",
-    "id": 8
-  },
-  {
     "name": "c++",
     "discription": "We will learn c++",
-    "id": 9
+    "id": 8
   },
   {
     "name": "DataStrucuter",
     "discription": "We will learn DataStrucuter",
-    "id": 10
+    "id": 9
   }
 ]

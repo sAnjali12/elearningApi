@@ -10,7 +10,6 @@ expresapp.post("/post",function(req,res){
         name:req.body.name,
         discription:req.body.discription
     }
-    id = req.params.id
     var data = fs.readFileSync("courses.json")
     data = data.toString();
     var Data = JSON.parse(data)
@@ -70,6 +69,23 @@ expresapp.delete("/delete/:id",function(req,res){
     return res.json(Data)
 })
 
+// Exercise post data..
+expresapp.post("/postexercise",function(req,res){
+    var exerciseUser = {
+        courseId:req.body.courseId,
+        name:req.body.name,
+        content:req.body.content,
+        hint:req.body.hint,
+    }
+    var data = fs.readFileSync("exercises.json")
+    data = data.toString();
+    var Data = JSON.parse(data)
+    exerciseUser.id = Data.length + 1;
+    Data.push(exerciseUser)
+    fs.writeFileSync("exercises.json", JSON.stringify(Data,null,2))
+    return res.json(Data)
+
+})
 
 const port = 2000
 app.listen(port,()=>
