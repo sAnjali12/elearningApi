@@ -97,9 +97,23 @@ app.get('/exercisesGet',function(req,res){
             var data = JSON.parse(data.toString())
             return res.data
         }
+    })
 })
 
-
+// by Id get json data...
+app.get("/course/:id",function(req,res){
+    exercisesData = []
+    courseId = req.params.id
+    var data  = fs.readFileSync("exercises.json");
+    var Data = JSON.parse(data);
+    for (var index in Data){
+        if(Data[index]["courseId"]==courseId){
+            var course=Data[index]
+            exercisesData.push(course)
+        }
+    }
+    res.end(JSON.stringify(exercisesData))
+})
 
 
 
