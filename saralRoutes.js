@@ -26,6 +26,18 @@ expresapp.get("/getData",function(req,res){
     var Data = JSON.parse(data);
     res.send(Data)
 })
+// BY name choice data...
+expresapp.get("/:name",function(req,res){
+    var data  = fs.readFileSync("courses.json");
+    var Data = JSON.parse(data);
+    for (var i = 0;i<Data.length;i++){
+        if(req.params.name==Data[i]["name"]){
+            var course=Data[i]
+            break;
+        }
+    }
+    res.end(JSON.stringify(course))
+})
 
 const port = 2000
 app.listen(port,()=>
