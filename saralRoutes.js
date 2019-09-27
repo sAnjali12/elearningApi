@@ -3,9 +3,9 @@ var app = express();
 var fs = require('fs');
 
 var bodyParser = require('body-parser')
-var expresapp = app.use(bodyParser.json())
+app.use(bodyParser.json())
 
-expresapp.post("/post",function(req,res){
+app.post("/post",function(req,res){
     var user = {
         name:req.body.name,
         discription:req.body.discription
@@ -20,13 +20,13 @@ expresapp.post("/post",function(req,res){
 
 })
 // get data..
-expresapp.get("/getData",function(req,res){
+app.get("/getData",function(req,res){
     var data = fs.readFileSync("courses.json");
     var Data = JSON.parse(data);
     res.send(Data)
 })
 // BY name choice data...
-expresapp.get("/:name",function(req,res){
+app.get("/:name",function(req,res){
     var data  = fs.readFileSync("courses.json");
     var Data = JSON.parse(data);
     for (var i = 0;i<Data.length;i++){
@@ -40,7 +40,7 @@ expresapp.get("/:name",function(req,res){
 
 
 // for uping data....
-expresapp.put('/putbyid/:id', function (req, res) {
+app.put('/putbyid/:id', function (req, res) {
 
     var id = req.params.id;
     var jsondata = fs.readFileSync('courses.json')
@@ -54,7 +54,7 @@ expresapp.put('/putbyid/:id', function (req, res) {
 
 })
 // / Delete data name choice data...
-expresapp.delete("/delete/:id",function(req,res){
+app.delete("/delete/:id",function(req,res){
     var data  = fs.readFileSync("courses.json");
     var Data = JSON.parse(data);
     for (var i = 0;i<Data.length;i++){
@@ -70,7 +70,7 @@ expresapp.delete("/delete/:id",function(req,res){
 })
 
 // Exercise post data..
-expresapp.post("/postexercise",function(req,res){
+app.post("/postexercise",function(req,res){
     var exerciseUser = {
         courseId:req.body.courseId,
         name:req.body.name,
@@ -86,6 +86,22 @@ expresapp.post("/postexercise",function(req,res){
     return res.json(Data)
 
 })
+
+// Courses Exercises get data..
+app.get('/exercisesGet',function(req,res){
+    fs.readFile('exercises.json',(err,data)=>{
+        if(err){
+            console.log("something went wrong")
+        }
+        else{
+            var data = JSON.parse(data.toString())
+            return res.data
+        }
+})
+
+
+
+
 
 const port = 2000
 app.listen(port,()=>
