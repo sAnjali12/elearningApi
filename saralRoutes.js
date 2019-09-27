@@ -20,6 +20,12 @@ expresapp.post("/post",function(req,res){
     return res.json(Data)
 
 })
+// get data..
+expresapp.get("/getData",function(req,res){
+    var data = fs.readFileSync("courses.json");
+    var Data = JSON.parse(data);
+    res.send(Data)
+})
 
 const port = 2000
 app.listen(port,()=>
