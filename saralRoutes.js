@@ -38,6 +38,19 @@ expresapp.get("/:name",function(req,res){
     }
     res.end(JSON.stringify(course))
 })
+expresapp.put('/putbyid/:id', function (req, res) {
+
+    var id = req.params.id;
+    var jsondata = fs.readFileSync('courses.json')
+    var data = JSON.parse(jsondata);
+   
+    data[id]["name"] = req.body.name;
+    data[id][ "description"] = req.body.description;
+    
+    fs.writeFileSync("courses.json", JSON.stringify(data));
+    return res.json(data)
+
+})
 
 const port = 2000
 app.listen(port,()=>
