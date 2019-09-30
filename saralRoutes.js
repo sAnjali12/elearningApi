@@ -51,7 +51,7 @@ app.put('/putbyid/:id', function (req, res) {
     
     fs.writeFileSync("courses.json", JSON.stringify(jsonData));
     return res.json(jsonData)
-
+    
 })
 // / Delete data name choice data...
 app.delete("/delete/:id",function(req,res){
@@ -133,6 +133,51 @@ app.get("/course/:id/exercise/:Eid",function(req,res){
     }
     res.end("data is not found")
     
+})
+
+app.put('/put/:cId/exercise/:eId',(req,res)=>{
+
+    var cId = req.params.cId;
+    var jsondata = fs.readFileSync('exercises.json')
+    var Data = JSON.parse(jsondata);
+
+    for(var index in Data){
+        if(Data[index]["courseId"]==cId){
+            var eId = req.params.eId-1
+            for (var j in Data){
+                if (Data[j]["id"]==eId && Data[j]["courseId"]==cId){
+                    Data[eId]["name"] = req.body.name;
+                    Data[eId]["description"] = req.body.description;
+                    Data[eId]["content"]=req.body.content;
+                    Data[eId]["hint"]=req.body.hint;
+                    fs.writeFileSync("exercises.json", JSON.stringify(Data,null,2));
+
+                    res.send(Data)
+                }
+                
+            }
+        }
+    }
+});
+
+app.post("/submissionPost/:id/exercise/:eId",function(req,res){
+    var courseId = req.params.id; 
+    var exerciseId = req.params.eId
+    var exerciseUser = {
+        codeUrl:req.body.codeUrl,
+        userName:req.body.userName
+        
+    }
+    var data = fs.readFileSync("submission.json")
+    data = data.toString();
+    var jsonData = JSON.parse(data)
+    exerciseUser.submissionId = jsonData.length + 1;
+    exerciseUser["courseId"] = parseInt(courseId)
+    exerciseUser["exerciseId"] = parseInt(exerciseId)
+    jsonData.push(exerciseUser)
+    fs.writeFileSync("submission.json", JSON.stringify(jsonData,null,2))
+    return res.json(jsonData)
+
 })
 
 const port = 2000
